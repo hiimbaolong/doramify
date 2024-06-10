@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fondo"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imagen_album"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toTopOf="@+id/texto_cancion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nevermind" />
+
+    <TextView
+        android:id="@+id/texto_artista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nirvana"
+        android:textColor="@color/gris_principal"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/texto_album"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_cancion" />
+
+    <TextView
+        android:id="@+id/texto_album"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nevermind"
+        android:textColor="@color/gris_principal"
+        app:layout_constraintBottom_toTopOf="@+id/boton_reproducir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_artista" />
+
+    <ImageButton
+        android:id="@+id/boton_reproducir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        app:layout_constraintBottom_toTopOf="@+id/barra_tiempo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_album"
+        app:srcCompat="@drawable/ic_reproducir" />
+
+    <SeekBar
+        android:id="@+id/barra_tiempo"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:progress="0"
+        android:progressBackgroundTint="@color/white"
+        android:progressTint="@color/gris_principal"
+        android:thumbTint="@color/white"
+        android:tickMarkTint="#F10000"
+        app:layout_constraintBottom_toTopOf="@+id/boton_repetir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_reproducir" />
+
+    <ImageButton
+        android:id="@+id/boton_repetir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/boton_favorito"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/boton_aleatorio"
+        app:layout_constraintTop_toBottomOf="@+id/barra_tiempo"
+        app:srcCompat="@drawable/ic_repetir" />
+
+    <TextView
+        android:id="@+id/texto_cancion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smells like teen spirit"
+        android:textColor="@color/gris_principal"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/texto_artista"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen_album" />
+
+    <TextView
+        android:id="@+id/texto_tiempoTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="2:52"
+        android:textColor="@color/gris_principal"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/barra_tiempo"
+        app:layout_constraintStart_toEndOf="@+id/barra_tiempo"
+        app:layout_constraintTop_toTopOf="@+id/barra_tiempo" />
+
+    <TextView
+        android:id="@+id/texto_tiempoTranscurrido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="0:00"
+        android:textColor="@color/gris_principal"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/barra_tiempo"
+        app:layout_constraintEnd_toStartOf="@+id/barra_tiempo"
+        app:layout_constraintTop_toTopOf="@+id/barra_tiempo" />
+
+    <ImageButton
+        android:id="@+id/boton_anterior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/boton_reproducir"
+        app:layout_constraintEnd_toStartOf="@+id/boton_reproducir"
+        app:layout_constraintTop_toTopOf="@+id/boton_reproducir"
+        app:srcCompat="@drawable/ic_anterior" />
+
+    <ImageButton
+        android:id="@+id/boton_siguiente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/boton_reproducir"
+        app:layout_constraintStart_toEndOf="@+id/boton_reproducir"
+        app:layout_constraintTop_toTopOf="@+id/boton_reproducir"
+        app:srcCompat="@drawable/ic_siguiente" />
+
+    <ImageButton
+        android:id="@+id/boton_favorito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/boton_repetir"
+        app:layout_constraintEnd_toStartOf="@+id/boton_compartir"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/boton_repetir"
+        app:layout_constraintTop_toTopOf="@+id/boton_repetir"
+        app:srcCompat="@drawable/ic_favoritoff" />
+
+    <ImageButton
+        android:id="@+id/boton_aleatorio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/boton_repetir"
+        app:layout_constraintEnd_toStartOf="@+id/boton_repetir"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/boton_repetir"
+        app:srcCompat="@drawable/ic_aleatorio" />
+
+    <ImageButton
+        android:id="@+id/boton_compartir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/boton_repetir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/boton_favorito"
+        app:layout_constraintTop_toTopOf="@+id/boton_repetir"
+        app:srcCompat="@drawable/ic_compartir" />
+
+    <ImageButton
+        android:id="@+id/boton_buscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/imagen_album"
+        app:layout_constraintEnd_toEndOf="@+id/imagen_album"
+        app:srcCompat="@drawable/ic_buscar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
